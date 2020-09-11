@@ -10,7 +10,6 @@
 #include "util/Transform3D.h"
 #include "util/ColorUtil.h"
 #include "GridModel.h"
-#include "GeometricModel.h"
 #include "SampleGrid.h"
 
 // Represents the current state of the robot and its perception of the world.
