@@ -79,7 +79,7 @@ public:
     const T* data() const {return d.data();}
 
     void swap(uint i, uint j) {T e = d[i]; d[i]=d[j]; d[j]=e;}
-    void removeAt(uint i) {removeAt(i);}
+    void removeAt(uint i) {remove(i);}
     void remove(uint i) {d.erase(d.begin()+i);tailIdx--;}
     void removeAll(const T& t)
     {
