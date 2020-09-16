@@ -130,14 +130,12 @@ Vec3 SampleGrid::getUpVector() const
     return upVector;
 }
 
-// Prune the samples
-// Sort the pruned samples vertically
-// Flood fill in sorted order
-// Merge down to get floor plane
+// Detects the floor plane by starting flood fills in the vertically
+// sorted pruned samples and accepting the first large plane.
 Sample SampleGrid::findFloor()
 {
     if (config.debugLevel > 0)
-        qDebug() << "SampleGrid::fitPlaneFlood(): up:" << upVector;
+        qDebug() << "SampleGrid::findFloor(): up:" << upVector;
 
     prune();
 
@@ -223,7 +221,7 @@ Sample SampleGrid::findFloor()
     return floorPlane;
 }
 
-// Collects neighbouring samples into the planeCluster vector based on their distance function .
+// Collects neighbouring samples into the planeCluster vector based on their distance function.
 // This is a simple recursive four-neighbour implementation.
 void SampleGrid::floodFill(const Vec2u &parentIdx)
 {

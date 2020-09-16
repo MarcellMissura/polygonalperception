@@ -6,6 +6,10 @@
 #include "util/Statistics.h"
 #include "util/StopWatch.h"
 
+// The RobotControl class implements a classic sense() - act() loop.
+// The sense() and act() functions are called periodically at a
+// fixed (configurable) rate.
+
 RobotControl::RobotControl(QObject *parent) : QObject(parent)
 {
 
